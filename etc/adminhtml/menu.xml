@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="TM_Base::manager" title="TM Extensions" module="TM_Base" sortOrder="10" resource="TM_Base::config_section"/>
+
+        <add
+                id="TM_PriceTickets::heading"
+                title="PriceTickets"
+                module="TM_PriceTickets"
+                resource="TM_PriceTickets::price_tickets_main"
+                sortOrder="10"
+                parent="TM_Base::manager"
+        />
+        <add
+                id="TM_PriceTickets::grid"
+                title="Print Price Tickets"
+                module="TM_PriceTickets"
+                sortOrder="2"
+                parent="TM_PriceTickets::heading"
+                action="pricetickets/grid/index"
+                resource="TM_PriceTickets::grid"
+        />
+    </menu>
+</config>

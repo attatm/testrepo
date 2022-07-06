@@ -1,0 +1,185 @@
+.replenishment-screen-header{
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid gray;
+    background-color: #6895e6;
+}
+
+* {box-sizing: border-box;}
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.form-inline label {
+    margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.form-inline button {
+    padding: 25px 32px;
+    background-color: #16983e;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+}
+
+.form-inline button:hover {
+    background-color: #16983e;
+}
+
+.form-inline {
+    display: flex;
+    font-size: 14px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.admin__data-grid-header.admin__data-grid-toolbar {
+    /*display: none;*/
+}
+
+#hello_tab_grid_massaction-select{
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .form-inline input {
+        margin: 10px 0;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.radio_label_check {
+    width: 90px;
+}
+
+/*popup css*/
+.modal-popup._inner-scroll .modal-inner-wrap {
+    max-height: 50%;
+    width: fit-content;
+    padding-top: 16px;
+    margin-top: 9%;
+}
+
+
+
+
+/*actions buttons and search bar css*/
+
+#pdflableGrid_massaction-form{
+    display: none;
+    position: absolute;
+}
+.main_div{
+    background-color:#DDDDDD;
+    width: 100%;
+    /*float: right;*/
+    height: auto;
+    /*margin-bottom: 26px;*/
+    padding: 47px;
+}
+.bnt_searchdiv{
+    float: right;
+}
+.btnlable_div{
+    float: right;
+}
+
+.search-button , .manual-button {
+    background: rgba(0, 0, 0, 0) linear-gradient(#96989b, #8d8f92) repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 13px 10px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+}
+
+.lablesearch.input-box {
+    border: 1px solid;
+    float: left;
+    font-size: 23px;
+    height: 23px;
+    padding: 10px;
+    width: 50%;
+}
+
+.print-button , .print-button-popup{
+    background: rgba(0, 0, 0, 0) linear-gradient(#96989b, #8d8f92) repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 1px 10px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+}
+
+.button-img {
+    display: block;
+    float: left;
+    text-align: center;
+
+}
+
+#product_grid_block-wrapper-pdflabel,#product_grid_block-wrapper-manual-form{
+
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid;
+    border-radius: 5px;
+    left: 25%;
+    padding: 1% 2%;
+    position: absolute;
+    top: 50%;
+    width: 58%;
+    z-index: 99;
+
+}
+
+#manualform-pdflabel{
+
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid;
+    border-radius: 5px;
+    left: 30%;
+    padding: 1% 2%;
+    position: absolute;
+    top: 50%;
+    width: 36%;
+    z-index: 99;
+
+}
+.overlay-pdflable-block {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="TM_PriceTickets::css/pricetickets.css"/>
+        <link src="TM_PriceTickets::js/actions.js"/>
+    </head>
+    <referenceContainer name="header" remove="true" />
+    <referenceContainer name="footer" remove="true" />
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="pricetickets.screen.actions.holder"
+                   template="TM_PriceTickets::actions.phtml" />
+        </referenceContainer>
+    </body>
+</page>

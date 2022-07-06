@@ -1,0 +1,132 @@
+<?php
+
+$productIds = $block->getData('productlist');
+$products = $block->getProducts($productIds);
+
+//CHM-AR
+//echo "<pre>"; print_r($products->getData());
+$temp_products = array();
+$i = 0;
+foreach ($products as $product){
+    $temp_products[$i]['sku']=$product->getSku();
+    $temp_products[$i]['name']=$product->getName();
+    $temp_products[$i]['size']=$product->getSize();
+    $temp_products[$i]['id']=$product->getId();
+    $temp_products[$i]['display_locations']=$product->getDisplayLocations();
+    $temp_products[$i]['name']=$product->getName();
+    $temp_products[$i]['price']=$product->getPrice();
+    $temp_products[$i]['name']=$product->getName();
+    $i++;
+}
+//echo "<pre>"; print_r($temp_products);
+
+usort($temp_products, function($a, $b) {
+    return $b['price'] <=> $a['price'];
+});
+//echo "<pre>after "; print_r($temp_products);
+//e.o CHM-AR
+?>
+
+<form id="pdflabelform" name="pdflabelform">
+    <div id="product_grid_block-returnformqty">
+        <table class="current-quantity-table">
+            <thead>
+            <tr>
+                <th>
+                    SKU
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Size
+                </th>
+                <th>
+                    Display Location
+                </th>
+<!---->
+<!--                <th>-->
+<!--                    Luxe Location (s)-->
+<!--                </th>-->
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <?php /*foreach ($products as $product): */?><!--
+                <tr>
+                    <td>
+                        <?php /*echo $product->getSku() */?>
+                    </td>
+                    <td>
+                        <?php /*echo $product->getName() */?>
+                    </td>
+                    <td>
+                        <?php /*echo $product->getSize() */?>
+                    </td>
+                    <td>
+                        <input name="display_locations[<?php /*echo $product->getId() */?>]"
+                               value="<?php /*echo $product->getDisplayLocations() */?>"
+                               product-id="<?php /*echo $product->getId() */?>"
+                               id="display_locations_<?php /*echo $product->getSku() */?>" type="text">
+
+                    </td>
+                </tr>
+            --><?php /*endforeach; */?>
+            <!-- CHM-AR price desc sorted -->
+            <?php foreach ($temp_products as $product): ?>
+                <tr>
+                    <td>
+                        <?php echo $product['sku'] ?>
+                    </td>
+                    <td>
+                        <?php echo $product['name'] ?>
+                    </td>
+                    <td>
+                        <?php echo $product['size'] ?>
+                    </td>
+                    <td>
+                        <input name="display_locations[<?php echo $product['id'] ?>]"
+                               value="<?php echo $product['display_locations'] ?>"
+                               product-id="<?php echo $product['id'] ?>"
+                               id="display_locations_<?php echo $product['sku'] ?>" type="text">
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            <!-- e.o CHM-AR price desc sorted -->
+
+            </tbody>
+        </table>
+        <p style="text-align: right; float: right">
+            <a id="print-button-popup" class="print-button-popup" href="javascript:void(0);">
+                <span class="button-img"><img src=""></span>
+                <span style="float: left; padding: 10px;"><?php echo 'Print'; ?></span>
+            </a>
+        </p>
+
+
+    </div>
+</form>
+<style>
+    table.current-quantity-table,
+    .current-quantity-table td,
+    .current-quantity-table th {
+        border: 1px solid black;
+    }
+
+    table.current-quantity-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .current-quantity-table th {
+        height: 35px;
+        padding-left: 15px;
+        vertical-align: middle;
+    }
+
+    .current-quantity-table td {
+        padding: 15px;
+    }
+</style>
